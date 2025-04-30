@@ -4,6 +4,7 @@ print(sys.path)
 from window import Window
 from point import Point
 from line import Line
+from cell import Cell
 
 def main():
     # Create a window instance
@@ -15,6 +16,12 @@ def main():
 
     # Create a line using the points
     line = Line(start_point, end_point)
+
+    # create cell
+    cell = Cell(100, 500, 100, 500, window)
+    cell.has_top_wall = False
+    cell.has_right_wall = False
+    cell.draw()
 
     # Draw the line on the window canvas
     window.draw_line(line, "blue")
